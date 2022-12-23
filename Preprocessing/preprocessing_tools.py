@@ -46,3 +46,17 @@ imputer.fit(x[: , 1:3]) # The fit method from the SimpleImputer class allows to 
 x[: , 1:3] = imputer.transform(x[: , 1:3]) # The transform function of the imputer object adds the mean values in the missing data, as specified by fit(), into a new dataset. We are rewritting the original dataset to include the transformed complete version
 
 print(x)
+
+
+"""
+The dataset includes categorical data that does not have a sequence of orders.
+For example, in the first column we have the names of all the countries which
+is important but has no numerical significance. We have to encode this data so
+the model can interpret it correctly, and we do that with one hot encoding.
+
+One hot coding means creating binary vectors for each different type of 
+categorical data. For example, creating three different columns for 3 countries.
+The purchased column which contrains Yes and No's will be converted into binary.
+"""
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
