@@ -41,3 +41,8 @@ preprocessing tools that aid us in replacing missing data.
 """
 from sklearn.impute import SimpleImputer 
 imputer = SimpleImputer(missing_values = np.nan, strategy = 'mean') # Tells the imputer that the missing values we want to replace are the empty ones, and we want to replace them with the mean of the column
+
+imputer.fit(x[: , 1:3]) # The fit method from the SimpleImputer class allows to look for all the missing values in ALL ROWS and ONLY NUMERICAL COLUMNS
+x[: , 1:3] = imputer.transform(x[: , 1:3]) # The transform function of the imputer object adds the mean values in the missing data, as specified by fit(), into a new dataset. We are rewritting the original dataset to include the transformed complete version
+
+print(x)
