@@ -27,3 +27,17 @@ y = dataset.iloc[: , -1].values # Dependent Variable - Gets values from ALL ROWS
 
 print(x)
 print(y)
+
+
+"""
+The dataset does indeed have missing data and values for some of the features,
+which can cause errors in our machine learning models. To address that, there
+are certain measures we can take to fix that:
+  1. Ignoring the missing data, simply removing it
+  2. Replace the missing data with the average of all the data in the column [X]
+
+Scikit-Learn is a data science library with a lot of tools, including data
+preprocessing tools that aid us in replacing missing data.
+"""
+from sklearn.impute import SimpleImputer 
+imputer = SimpleImputer(missing_values = np.nan, strategy = 'mean') # Tells the imputer that the missing values we want to replace are the empty ones, and we want to replace them with the mean of the column
