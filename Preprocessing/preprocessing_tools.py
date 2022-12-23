@@ -22,11 +22,11 @@ is really what you WANT to predict.
 """
 dataset = pd.read_csv('Preprocessing/Data.csv') # Pandas reads the dataset and creates a data frame. The data frame is stored in the variable dataset.
 #   dataset.iloc[rows, columns]
-x = dataset.iloc[: , :-1].values # Matrix of Features - Gets values from ALL ROWS, and all columns EXCEPT FOR LAST using Pandas' iloc function, which means locate indices, to single out the rows with our data and columns of features
-y = dataset.iloc[: , -1].values # Dependent Variable - Gets values from ALL ROWS, and ONLY LAST COLUMN using Pandas' iloc function
+X = dataset.iloc[: , :-1].values # Matrix of Features - Gets values from ALL ROWS, and all columns EXCEPT FOR LAST using Pandas' iloc function, which means locate indices, to single out the rows with our data and columns of features
+Y = dataset.iloc[: , -1].values # Dependent Variable - Gets values from ALL ROWS, and ONLY LAST COLUMN using Pandas' iloc function
 
-print(x)
-print(y)
+# print(X)
+# print(Y)
 
 
 """
@@ -42,10 +42,10 @@ preprocessing tools that aid us in replacing missing data.
 from sklearn.impute import SimpleImputer 
 imputer = SimpleImputer(missing_values = np.nan, strategy = 'mean') # Tells the imputer that the missing values we want to replace are the empty ones, and we want to replace them with the mean of the column
 
-imputer.fit(x[: , 1:3]) # The fit method from the SimpleImputer class allows to look for all the missing values in ALL ROWS and ONLY NUMERICAL COLUMNS
-x[: , 1:3] = imputer.transform(x[: , 1:3]) # The transform function of the imputer object adds the mean values in the missing data, as specified by fit(), into a new dataset. We are rewritting the original dataset to include the transformed complete version
+imputer.fit(X[: , 1:3]) # The fit method from the SimpleImputer class allows to look for all the missing values in ALL ROWS and ONLY NUMERICAL COLUMNS
+X[: , 1:3] = imputer.transform(X[: , 1:3]) # The transform function of the imputer object adds the mean values in the missing data, as specified by fit(), into a new dataset. We are rewritting the original dataset to include the transformed complete version
 
-print(x)
+# print(X)
 
 
 """
@@ -60,3 +60,7 @@ The purchased column which contrains Yes and No's will be converted into binary.
 """
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
+
+ct = ColumnTransformer(transformers = [('encoder', OneHotEncoder(), [0])], remainder = 'passthrough') # The column transformer, edits an entire column to our liking, takes two parameters... transformers - which is what we want to do, type of encoding we want to do, and on which columns. Remainders - the columns which we want to keep and don't want to apply transformations to.
+X = np.array(ct.fit_transform(X)) # The Column Transformer class has a method called fit_transform which identifies the correct indices and changes it at the same time. However, the output is not an array which can be harmful for the model, so we use NumPy's array method to force the ouptut as an array. The output is a copy of X so we are reassigning it to the original X
+print(X)
