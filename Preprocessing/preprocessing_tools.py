@@ -87,4 +87,11 @@ the test set is supposed to be a brand new set to which you should be evaluating
 your machine learning model. You MUST treat it like a brand new dataset so you
 cannot apply the same feature scaling to the testing set to prevent information
 leakage.
+
+We will use the train_test_split function from scikit-learn to divide the data
+into four sections - features and dependent variable sets for both the training 
+and testing sets. 
 """
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state = 1)
