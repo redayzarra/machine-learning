@@ -21,3 +21,7 @@ dataset$Salary = ifelse(is.na(dataset$Salary),
 dataset$Country = factor(dataset$Country, # Factor function to replace the country names with specified codes
                          levels = c('France', 'Spain', 'Germany'), # Levels is the name of the categories we want to encode
                          labels = c(1, 2, 3)) # Labels is the number we are substituting them with
+
+dataset$Purchased = factor(dataset$Purchased,
+                           levels = c('Yes', 'No'),
+                           labels = c('1', '0'))
