@@ -1,4 +1,5 @@
 # Data Pre-processing
+rm(list = ls())
 
 # Import the data set
 
@@ -24,4 +25,15 @@ dataset$Country = factor(dataset$Country, # Factor function to replace the count
 
 dataset$Purchased = factor(dataset$Purchased,
                            levels = c('Yes', 'No'),
-                           labels = c('1', '0'))
+                           labels = c(1, 0))
+
+
+# Splitting the Data set into training and testing matrices with caTools
+
+# install.packages('caTools')
+library(caTools)
+
+set.seed(123) # Specifies a seed so we can always replicate the random way the dataset was divided
+split = sample.split(dataset$Purchased, SplitRatio = 0.8) # The sample.split method allows us to specify the column we will be applying the split to and then the ratio we will be using for the training set
+training_set = subset(dataset, split == TRUE) # Set the variable training_set to be the subset of the split dataset
+test_set = subset(dataset, split == FALSE) # The test_set needs to be false because we don't want the same split ratio
