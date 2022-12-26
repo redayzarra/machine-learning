@@ -96,7 +96,28 @@ from sklearn.model_selection import train_test_split
 
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state = 1)
 
-print(X_train)
-print(X_test)
-print(Y_train)
-print(Y_test)
+# print(X_train)
+# print(X_test)
+# print(Y_train)
+# print(Y_test)
+
+
+"""
+Feature scaling allows us to scale our features evenly so some features do not
+dominate other features (outliers). However, feature scaling is often unncessary
+for most machine learning models because the models use linear regression 
+equations, for example: y = b0 + b1x1 + b2x2 + ... , and so the model adjusts
+for the features by choosing a smaller coefficient.
+
+There are two main feature scaling techniques that put all features on the same
+scale: standardization and normalization. Standardization is subtracting each 
+value of the feature by the mean of the data and dividing the result by the 
+standard deviation (results will be between -3 and 3). Normalization is when you 
+subtract the minimum feature value from each feature value and then divide the 
+result by the difference between the maximum and minimum feature value (results
+will be between 0 and 1).
+
+Normalization is recommended for a normal distribution in most of your features. 
+Standardization is well-suited for most datasets and will work almost always 
+which is why standardization is most-recommended. 
+"""
