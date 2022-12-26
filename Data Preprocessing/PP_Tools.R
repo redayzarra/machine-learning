@@ -37,3 +37,9 @@ set.seed(123) # Specifies a seed so we can always replicate the random way the d
 split = sample.split(dataset$Purchased, SplitRatio = 0.8) # The sample.split method allows us to specify the column we will be applying the split to and then the ratio we will be using for the training set
 training_set = subset(dataset, split == TRUE) # Set the variable training_set to be the subset of the split dataset
 test_set = subset(dataset, split == FALSE) # The test_set needs to be false because we don't want the same split ratio
+
+
+# Feature scaling the data with standardization
+
+training_set[, 2:3] = scale(training_set[, 2:3]) # Scales the training_set matrix automatically however it only accepts numeric parameters. 
+test_set[, 2:3] = scale(test_set[, 2:3]) # Since we used factors to encode our categorical data, we don't actually have ALL numeric values in our dataset so we will exclude the categorical columns
