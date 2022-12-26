@@ -121,3 +121,6 @@ Normalization is recommended for a normal distribution in most of your features.
 Standardization is well-suited for most datasets and will work almost always 
 which is why standardization is most-recommended. 
 """
+from sklearn.preprocessing import StandardScaler
+
+sc = StandardScaler()
