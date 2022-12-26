@@ -63,7 +63,7 @@ from sklearn.preprocessing import OneHotEncoder
 
 ct = ColumnTransformer(transformers = [('encoder', OneHotEncoder(), [0])], remainder = 'passthrough') # The column transformer, edits an entire column to our liking, takes two parameters... transformers - which is what we want to do, type of encoding we want to do, and on which columns. Remainders - the columns which we want to keep and don't want to apply transformations to.
 X = np.array(ct.fit_transform(X)) # The Column Transformer class has a method called fit_transform which identifies the correct indices and changes it at the same time. However, the output is not an array which can be harmful for the model, so we use NumPy's array method to force the ouptut as an array. The output is a copy of X so we are reassigning it to the original X
-print(X)
+# print(X)
 
 
 """
@@ -76,4 +76,15 @@ from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder() # Identifies Yes's and No's
 Y = le.fit_transform(Y) # Automatically locates the indices of the Yes's and No's and transforms them into a new array with 1's and 0's
 
-print(Y)
+# print(Y)
+
+
+"""
+Splitting the dataset consists of making two seperate sets - one training set and
+one test set which will be used for evaluation and depolyment. Splitting the data
+is done before feature scaling, scaling all features to make them even, because
+the test set is supposed to be a brand new set to which you should be evaluating
+your machine learning model. You MUST treat it like a brand new dataset so you
+cannot apply the same feature scaling to the testing set to prevent information
+leakage.
+"""
