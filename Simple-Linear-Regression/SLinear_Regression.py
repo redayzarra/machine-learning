@@ -18,3 +18,17 @@ between these two (vertical distance between them) is called the residual:
 equation, we want to manipulate b0 and b1 in a way that the the SUM of the 
 square of the residuals is as small as possible or SUM(yi - ŷi)^2 is smallest.
 """
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+
+"""
+Importing and reading the dataset with the help of pandas library
+"""
+dataset = pd.read_csv('Simple-Linear-Regression/Salary_Data.csv')
+X = dataset.iloc[:, 0].values # Assigning the variable X as the values of all the rows from the first column or feature
+Y = dataset.iloc[:, -1].values # Y variable is the independent variable and it takes values of all rows from the last column
+
+# print(X)
+# print(Y)
