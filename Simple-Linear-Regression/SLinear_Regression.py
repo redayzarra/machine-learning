@@ -81,3 +81,9 @@ plt.xlabel('Years of Experience') # Labeling the x-axis
 plt.ylabel('Salary') # Labeling the y-axis
 
 plt.show()
+
+
+"""
+Visualizing the test set results with matplotlib, similar to what we did earlier.
+We will use the same labels, and axis.
+"""
