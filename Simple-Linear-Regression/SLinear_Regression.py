@@ -37,6 +37,21 @@ Y = dataset.iloc[:, -1].values # Y variable is the dependent variable and it tak
 """
 Splitting the dataset into the training set and the test set
 """
-from sklearn.model_selection import train_test_split # Import the model selection library from sklearn and use the train_test_split function to split the model into training and testing sets
+from sklearn.model_selection import train_test_split # Import the model selection module from sklearn library and use the train_test_split function to split the model into training and testing sets
 
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state = 0) # Establish the variables for the four different sets. Specifying the size of the test size to be 20% while the seed is at 0
+
+
+# print(X_test)
+# print(X_train)
+# print(Y_test)
+# print(Y_train)
+
+
+"""
+Building a simple linear regression model requires importing the correct class.
+Simple linear regression models can be built by scratch or with libraries, in 
+this case we will be using the scikit-learn library to build our model.
+"""
+from sklearn.linear_model import LinearRegression # Use the scikit-learn library to call the LinearRegression class from the linear model module
+
