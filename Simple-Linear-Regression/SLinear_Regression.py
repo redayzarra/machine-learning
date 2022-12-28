@@ -27,8 +27,13 @@ import pandas as pd
 Importing and reading the dataset with the help of pandas library
 """
 dataset = pd.read_csv('Simple-Linear-Regression/Salary_Data.csv')
-X = dataset.iloc[:, 0].values # Assigning the variable X as the values of all the rows from the first column or feature
-Y = dataset.iloc[:, -1].values # Y variable is the independent variable and it takes values of all rows from the last column
+X = dataset.iloc[:, :-1].values # Assigning the variable X as the values of all the rows from all the columns except for the last one
+Y = dataset.iloc[:, -1].values # Y variable is the dependent variable and it takes values of all rows from the last column
 
 # print(X)
 # print(Y)
+
+
+"""
+
+"""
