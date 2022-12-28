@@ -80,7 +80,7 @@ plt.title('Salary vs. Experience - Training Set') # Adding the title for the gra
 plt.xlabel('Years of Experience') # Labeling the x-axis
 plt.ylabel('Salary') # Labeling the y-axis
 
-plt.show() # Displaying the graph
+# plt.show() # Displaying the graph
 
 
 """
@@ -96,7 +96,7 @@ plt.title('Salary vs. Experience - Test Set')
 plt.xlabel('Years of Experience')
 plt.ylabel('Salary')
 
-plt.show()
+# plt.show()
 
 
 """
@@ -107,3 +107,13 @@ experience and so we can input the value 15 (must be inside a 2D array like this
 [[15]] because the predict() method only accepts 2D arrays).
 """
 print(regressor.predict([[15]])) # Instead of giving an entire array to predict the values of, we are just giving one value on the x-axis and the predict() method will find the y-value on the line, or the salary (dependent variable).
+
+
+"""
+Finding the final linear regression equation is possible by directly getting the
+values of the coefficients. We can get the values of the y-intercept (b0) and the
+slope (b1) with the .intercept_ and the .coef_ method.
+"""
+coefficient = regressor.coef_ # Gets the coefficient (m) or the slope in the equation: y = mx + b 
+intercept = regressor.intercept_ # Gets the y-intercept (b)
+print(f'The equation of the line is: y = {coefficient}x + {intercept}')
