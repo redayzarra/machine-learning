@@ -97,3 +97,13 @@ plt.xlabel('Years of Experience')
 plt.ylabel('Salary')
 
 plt.show()
+
+
+"""
+Making a single prediction with the linear regression model that we have created.
+We can accomplish this by using the predict() method as shown earlier and passing
+a value for our x-axis or feature. In our case, the feature is years of 
+experience and so we can input the value 15 (must be inside a 2D array like this
+[[15]] because the predict() method only accepts 2D arrays).
+"""
+print(regressor.predict([[15]])) # Instead of giving an entire array to predict the values of, we are just giving one value on the x-axis and the predict() method will find the y-value on the line, or the salary (dependent variable).
