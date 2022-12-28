@@ -85,5 +85,15 @@ plt.show() # Displaying the graph
 
 """
 Visualizing the test set results with matplotlib, similar to what we did earlier.
-We will use the same labels, and axis.
+We will use the same labels, and axis except now we will use the X_test and 
+Y_test as our coordinates. However, the line will remain the same as the one
+from the training set, so we won't change anything in plot.
 """
+plt.scatter(X_test, Y_test, color = 'red') # The cooridnates of the test sets have to be used
+plt.plot(X_train, regressor.predict(X_train), color = 'blue') # We want the same line as our training sets so we will continue to use the same variables to make the same line.
+
+plt.title('Salary vs. Experience - Test Set')
+plt.xlabel('Years of Experience')
+plt.ylabel('Salary')
+
+plt.show()
