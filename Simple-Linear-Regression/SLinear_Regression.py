@@ -75,3 +75,9 @@ the salaries. We are creating this graph for the features training set or X_trai
 """
 plt.scatter(X_train, Y_train, color = 'red') # Use the pyplot module, being shown as plt, and use the scatter() module to create a scatter plot. The x-axis is X_train and the y-axis is Y_train. We are also setting the color of the line to be red.
 plt.plot(X_train, regressor.predict(X_train), color = 'blue') # Use the plot method to plot the years of experience from our training set, and then uset the predict method to find the predicted salaries for the training set.
+
+plt.title('Salary vs. Experience - Training Set') # Adding the title for the graph
+plt.xlabel('Years of Experience') # Labeling the x-axis
+plt.ylabel('Salary') # Labeling the y-axis
+
+plt.show()
