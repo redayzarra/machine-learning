@@ -39,7 +39,7 @@ Splitting the dataset into the training set and the test set
 """
 from sklearn.model_selection import train_test_split # Import the model selection module from sklearn library and use the train_test_split function to split the model into training and testing sets
 
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 1/3, random_state = 0) # Establish the variables for the four different sets. Specifying the size of the test size to be 1/3 while the seed is at 0
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state = 0) # Establish the variables for the four different sets. Specifying the size of the test size to be 20% while the seed is at 0
 
 
 # print(X_test)
@@ -57,3 +57,11 @@ from sklearn.linear_model import LinearRegression # Use the scikit-learn library
 
 regressor = LinearRegression() # Assigning variable regressor as an instance object
 regressor.fit(X_train, Y_train) # The fit() method will train the regression model and make calculations based on our training sets for the features (X_train) and our dependent variable (Y_train)
+
+
+"""
+Predicting the test set results by producing the observations from the test set.
+The model should be able to accurately predict the salary of the test sets, that
+we have set aside (there should be 6 of them), based on the years of experience.
+The ground truth is the actual value of the salaries from our testing sets.
+"""
