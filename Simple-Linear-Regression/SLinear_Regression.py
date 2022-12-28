@@ -66,3 +66,12 @@ we have set aside (there should be 6 of them), based on the years of experience.
 The ground truth is the actual value of the salaries from our testing sets.
 """
 Y_pred = regressor.predict(X_test) # Using the predict() method from the LinearRegression class, we can enter the testing set of our features as an argument to create an array of predictions. We will assign this new array to variable Y_pred 
+
+
+"""
+Visualizing the training set results with matplotlib with the pyplot module by 
+creating a 2D plot with x-axis as the years of experience, and the y-axis being 
+the salaries. We are creating this graph for the features training set or X_train.
+"""
+plt.scatter(X_train, Y_train, color = 'red') # Use the pyplot module, being shown as plt, and use the scatter() module to create a scatter plot. The x-axis is X_train and the y-axis is Y_train. We are also setting the color of the line to be red.
+plt.plot(X_train, regressor.predict(X_train), color = 'blue') # Use the plot method to plot the years of experience from our training set, and then uset the predict method to find the predicted salaries for the training set.
