@@ -80,7 +80,7 @@ plt.title('Salary vs. Experience - Training Set') # Adding the title for the gra
 plt.xlabel('Years of Experience') # Labeling the x-axis
 plt.ylabel('Salary') # Labeling the y-axis
 
-plt.show()
+plt.show() # Displaying the graph
 
 
 """
