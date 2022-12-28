@@ -2,7 +2,7 @@
 Simple Linear Regression utilizes this linear equation: y = b0 + b1*x1 - where y
 is the dependent variable (what we want to predict), and x1 is the independent
 variable or feature, b0 is the y-intercept or a constant, and finally b1 is the
-slope coefficient.
+slope coefficient. Regression is when you want to predict a real value.
 
 For example, predicting the output of potatoes from the amount of fertilizer a
 farmer chooses to use. The amount of fertilizer is the independent variable or 
@@ -55,3 +55,4 @@ this case we will be using the scikit-learn library to build our model.
 """
 from sklearn.linear_model import LinearRegression # Use the scikit-learn library to call the LinearRegression class from the linear model module
 
+regressor = LinearRegression()
