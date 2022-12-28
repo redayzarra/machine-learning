@@ -65,3 +65,4 @@ The model should be able to accurately predict the salary of the test sets, that
 we have set aside (there should be 6 of them), based on the years of experience.
 The ground truth is the actual value of the salaries from our testing sets.
 """
+Y_pred = regressor.predict(X_test) # Using the predict() method from the LinearRegression class, we can enter the testing set of our features as an argument to create an array of predictions. We will assign this new array to variable Y_pred 
