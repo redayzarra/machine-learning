@@ -116,4 +116,5 @@ slope (b1) with the .intercept_ and the .coef_ method.
 """
 coefficient = regressor.coef_ # Gets the coefficient (m) or the slope in the equation: y = mx + b 
 intercept = regressor.intercept_ # Gets the y-intercept (b)
-print(f'The equation of the line is: y = {coefficient}x + {intercept}')
+
+print(f'The equation of the line is: y = {coefficient}x + {intercept}') # Formatted string that displays the final regression line in one final equation!
