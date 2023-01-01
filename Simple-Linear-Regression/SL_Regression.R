@@ -37,3 +37,38 @@ Y_pred # The vector that stores our new predictions based off the test_set
 
 # Visualizing the training set results:
 
+#install.packages("gglplot2") #Installs the ggplot2 library if it's not already there
+library(ggplot2)
+
+ggplot() + # The ggplot() section goes first and then we add the individual components afterwards like so:
+  geom_point(aes(x = training_set$YearsExperience, y = training_set$Salary), # The geom_point function takes parameter aes which specifies what to plot on the X and Y axis
+             color = 'red') + # Sets the color of the data points
+  
+  geom_line(aes(x = training_set$YearsExperience, y = predict(regressor, newdata = training_set)), # The geom_line function creates our regression line, however we will specify the y-axis to be the prediction values of the training set
+            color = 'black') +
+  
+  ggtitle("Salary vs. Years of Experience - Training Set") +
+  xlab("Years of Experience") +
+  ylab("Salary")
+
+
+# Visualizing the test set results:
+
+ggplot() + 
+  geom_point(aes(x = test_set$YearsExperience, y = test_set$Salary),
+             color = 'black') +
+  
+  geom_line(aes(x = test_set$YearsExperience, y = Y_pred),
+            color = 'red') +
+  
+  ggtitle("Salary vs. Years of Experience - Test Set") +
+  xlab("Years of Experience") +
+  ylab("Salary")
+
+
+# Finding the final coefficients:
+
+coeffs <- regressor["coefficients"[1]]
+coeffs <- coeffs$coefficients
+b <- coeffs[1]
+m <- coeffs[2]
