@@ -17,3 +17,6 @@ test_set = subset(dataset, split == FALSE) # The remaining third was stored here
 
 
 # Feature Scaling with Standardization - taken care of by the simple linear regression package
+
+regressor = lm(formula = Salary ~ YearsExperience, # The lm function is used to fit linear models, it takes parameter formula which is the Salary is proportional to YearsExperience
+               data = training_set) 
