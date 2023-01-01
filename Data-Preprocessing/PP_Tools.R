@@ -31,8 +31,8 @@ dataset$Purchased = factor(dataset$Purchased,
 
 # Splitting the Data set into training and testing matrices with caTools
 
-# install.packages('caTools')
-library(caTools)
+# install.packages('caTools') # Install caTools if it's not already there
+library(caTools) # Access the caTools library
 
 set.seed(123) # Specifies a seed so we can always replicate the random way the dataset was divided
 split = sample.split(dataset$Purchased, SplitRatio = 0.8) # The sample.split method allows us to specify the column we will be applying the split to and then the ratio we will be using for the training set
