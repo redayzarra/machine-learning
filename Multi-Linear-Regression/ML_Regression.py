@@ -90,7 +90,13 @@ There are five main methods to building multiple linear regression models:
   you should be using. You would also be using this for preparing for backward
   elimination.
 
-  2. Backward Elimination
+  2. Backward Elimination:
+        a. Select a significance level to stay in the model, maximum level.
+        b. Fit the full model with all the possible predictors
+        c. Consider the predictors with the highest p-value 
+        d. Remove the highest predictors
+        e. Fit the model without the variable (rebuild the whole model)
+        f. Repeat until all variables p-values are lower than the maximum
 
   3. Forward Selection
 
