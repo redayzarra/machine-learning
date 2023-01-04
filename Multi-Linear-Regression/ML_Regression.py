@@ -118,4 +118,41 @@ There are five main methods to building multiple linear regression models:
         a. Select a criterion of goodness of fit (e.g Akaike criterion)
         b. Construct all possible regression models: 2^(n-1) total combinations
         c. Select the model with the best criterion
+
+
+Importing the libraries we need for implementing the multi-linear regression models
+with pandas, sci-kit learn, numpy, and matplotlib
 """
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+"""
+We then import the dataset and read it with the pandas library. And then using the
+.iloc method provided by the pandas library to assign the independent and dependent
+variables on the dataset. The dependent variable is usually the last column, in our
+case it is the "Profit" column.
+"""
+dataset = pd.read_csv('Multi-Linear-Regression/50_Startups.csv')
+
+X = dataset.iloc[: , :-1].values
+Y = dataset.iloc[: , 1].values
+
+
+"""
+Our dataset contains categorical data as seen in the "State" column where there
+are many categories (state names) where companies are located. To address this, we
+will have to create dummy variables which will encode the categories and allow the 
+model to interpret the data. 
+
+We are able to use sci-kit learn to apply the one-hot encoding technique. We will 
+need the ColumnTransformer class to change the columns in our dataset and then the 
+OneHotEncoder to encode the categorical data. We need numpy to make sure the output
+of the .fit_transform method from the ColumnTransformer class is an array.
+"""
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
+
+ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [3])], remainder='passthrough')
+X = np.array(ct.fit_transform(X))
