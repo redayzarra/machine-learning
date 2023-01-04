@@ -45,4 +45,26 @@ assumptions to make before using linear regression:
 While this is not one of the five assumptions, an extra check we can run when using
 linear regression is an outlier check. An outlier check would find outliers in a 
 dataset and remove them from significantly affecting the linear regression model.
+
+Dummy variables are used when we encounter categorical data in our dataset. For
+example, if we are looking at the profit a company generates from spending in 
+marketing, research, customer service.. we can just use the numerical values for
+our x variable in our equation: ŷ = b0 + b1*x1 + b2*x2 ... + bn*xn - however, it is
+difficult to add categorical variables such as state or region the company is 
+located at. For this scenario, we use dummy variables. 
+
+To use dummy variables, identify all the categories you have in your categorical
+independent variable. If there are only companies in New York and Cali then you 
+would have two categories. Take these categories and create new columns for them,
+containing 1's and 0's for whether or not the data is from New York (1 if yes) or
+not (0 if no). The equation would then include:  ŷ = b0 + bn*xn + bn*Dn - where Dn
+is the dummy variables from your categorical data. 
+
+However, it is not necessary to use all of your categories as dummy variables. For 
+example, you can use just one dummy variable for New York (with 1's and 0's) 
+because if it's not in NY then it has to be in CA. This is because we don't want
+the linear regression model to include the coefficient for CA in the y-intercept.
+When you are building a model, it is crucial to always remove one dummy variable 
+because it causes multicollinearity since it creates two variables that affect 
+each other in some way. If you have 9 dummy variables, you should only include 8. 
 """
