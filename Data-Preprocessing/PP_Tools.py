@@ -61,7 +61,7 @@ The purchased column which contrains Yes and No's will be converted into binary.
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 
-ct = ColumnTransformer(transformers = [('encoder', OneHotEncoder(), [0])], remainder = 'passthrough') # The column transformer, edits an entire column to our liking, takes two parameters... transformers - which is what we want to do, type of encoding we want to do, and on which columns. Remainders - the columns which we want to keep and don't want to apply transformations to.
+ct = ColumnTransformer(transformers = [('encoder', OneHotEncoder(), [0])], remainder = 'passthrough') # The column transformer, edits an entire column to our liking, takes these parameters... transformers - which is what we want to do, type of encoding we want to do, and on which columns. Remainders - the columns which we want to keep and don't want to apply transformations to.
 X = np.array(ct.fit_transform(X)) # The Column Transformer class has a method called fit_transform which identifies the correct indices and changes it at the same time. However, the output is not an array which can be harmful for the model, so we use NumPy's array method to force the ouptut as an array. The output is a copy of X so we are reassigning it to the original X
 # print(X)
 
