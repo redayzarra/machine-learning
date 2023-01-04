@@ -139,6 +139,9 @@ dataset = pd.read_csv('Multi-Linear-Regression/50_Startups.csv')
 X = dataset.iloc[: , :-1].values
 Y = dataset.iloc[: , 1].values
 
+# print(X)
+# print(Y)
+
 
 """
 Our dataset contains categorical data as seen in the "State" column where there
@@ -156,3 +159,19 @@ from sklearn.preprocessing import OneHotEncoder
 
 ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [3])], remainder='passthrough')
 X = np.array(ct.fit_transform(X))
+
+# print(X)
+
+
+"""
+Splitting the dataset into the training and test set. We can use the sci-kit learn
+model selection library to utilize the train_test_split function.
+"""
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state = 0)
+
+# print(X_train)
+# print(X_test)
+# print(Y_train)
+# print(Y_test)
