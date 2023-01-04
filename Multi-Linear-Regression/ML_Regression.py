@@ -99,7 +99,7 @@ There are five main methods to building multiple linear regression models:
         f. Repeat until all variables p-values are lower than the minimum level
 
   3. Forward Selection:
-        a. Select a significance level to enter the model, maximum level.
+        a. Select the maximum significance level for predictors to enter the model
         b. Fit all the simple regression models (y ~ xn)
         c. Select the one with the lowest p-value
         d. Keep the variable and add on ONE other predictor
@@ -107,7 +107,15 @@ There are five main methods to building multiple linear regression models:
         f. Repeat adding variables until the p-value reaches the maximum level
         g. Keep the previous model not the current one
 
-  4. Bidirectional Elimination
+  4. Bidirectional Elimination: also known as Step-Wise Regression
+        a. Select a significance level to enter and stay in the model
+        b. Perform the next step of forward selection (new variables P < SL-ENTER)
+        c. Perform ALL the steps of backward elimination (old variables P < SL-STAY)
+        d. Repeat step c every time you grow the model by a variable
+        e. No new variables can be added or no old variables can exit
 
-  5. Score Comparison
+  5. Score Comparison: All possible models (very resource intense)
+        a. Select a criterion of goodness of fit (e.g Akaike criterion)
+        b. Construct all possible regression models: 2^(n-1) total combinations
+        c. Select the model with the best criterion
 """
