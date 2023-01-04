@@ -26,5 +26,23 @@ assumptions to make before using linear regression:
   that variance is dependent of the independent variable (where linear regression
   wouldn't be a good fit).
 
-  
+  3. Multivariate Normality - defined as normality of error distribution. Meaning,
+  if your dataset has many trends (dataset forms multiple seperate lines or 
+  trends) then linear regression is not a good fit. You want your line to be 
+  intersecting as many points as possible or atleast in the right ballpark.
+
+  4. Independence - being independent of observations including no autocorrelation.
+  We don't want to see patterns in our data, the last thing we want to see is our
+  datasets following some sort of wave-like patterns because this means that our
+  independent variables (features) are not independent of each other. They are 
+  somehow affecting one another which means linear regression is not an option.
+
+  5. Lack of Multicollinearity - meaning we don't want our independent variables
+  or predictors to not be correlated with each other. If they are not correlated 
+  then we can build a linear regression model for the data and it would work. But, 
+  if the data's independent variables are correlated then we can't use linear models.
+
+While this is not one of the five assumptions, an extra check we can run when using
+linear regression is an outlier check. An outlier check would find outliers in a 
+dataset and remove them from significantly affecting the linear regression model.
 """
