@@ -196,3 +196,12 @@ from sklearn.linear_model import LinearRegression
 
 regressor = LinearRegression()
 regressor.fit(X_train, Y_train)
+
+
+"""
+Since there are many features on the dataset, it isn't possible to graph the model
+results so instead we will create two vectors. One will contain a sample of the 
+actual profit values, or the dependent variable, while the other vector contains a
+sample of the predicted values from the model. We will compare the two vectors to
+effectively evaluate our model.
+"""
