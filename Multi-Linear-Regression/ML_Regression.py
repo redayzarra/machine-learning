@@ -175,3 +175,15 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, rando
 # print(X_test)
 # print(Y_train)
 # print(Y_test)
+
+
+"""
+Feature Scaling - There is no need to use feature scaling in multiple linear 
+regression because the coefficients will balance themselves out to adjust for 
+higher values.
+"""
+
+
+"""
+
+"""
