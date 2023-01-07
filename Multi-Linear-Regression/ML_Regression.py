@@ -205,3 +205,7 @@ actual profit values, or the dependent variable, while the other vector contains
 sample of the predicted values from the model. We will compare the two vectors to
 effectively evaluate our model.
 """
+Y_pred = regressor.predict(X_test) # The .predict() method from the LinearRegression class predicts the profits (dependent variable) from the training features set (X_test) and stores it in Y_pred
+np.set_printoptions(precision = 2) # Displays any numerical value with only 2 decimals
+
+print(np.concatenate((Y_pred.reshape(len(Y_pred), 1), Y_test.reshape(len(Y_test), 1)), 1)) # The concatenate function expects the tuple of arrays that we want to concatenate. Since we want to concatenate the Y_pred (or the predicted values for the depenedent variable), we will add Y_pred in the concatenate function. However, because we want to print the array vertically we can use the .reshape() method to print the vector vertically, which also takes the length of the array (because we need the number of elements in Y_pred) and the number of columns which is just 1. We apply the same .reshape method to the Y_test vector because we want to concatenate that. The concatenate function also needs an axis parameter which will be 1 because we want to concatenate horizontally.
