@@ -192,3 +192,7 @@ category needs to be left out to avoid redundancies). The class will also perfor
 step-wise regression for us and will automatically chooset the features with the
 highest p-value to predict the dependent variable.
 """
+from sklearn.linear_model import LinearRegression
+
+regressor = LinearRegression()
+regressor.fit(X_train, Y_train)
