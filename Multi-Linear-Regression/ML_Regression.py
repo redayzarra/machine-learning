@@ -137,7 +137,7 @@ case it is the "Profit" column.
 dataset = pd.read_csv('Multi-Linear-Regression/50_Startups.csv')
 
 X = dataset.iloc[: , :-1].values
-Y = dataset.iloc[: , 1].values
+Y = dataset.iloc[: , -1].values
 
 # print(X)
 # print(Y)
