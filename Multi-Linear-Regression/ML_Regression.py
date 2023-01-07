@@ -185,5 +185,10 @@ higher values.
 
 
 """
-
+The dummy variable trap and step-wise regression is not necessary to implement
+multiple linear regression because the sci-kit learn class that we will use already
+avoids the dummy variable trap (where categorical data needs to be encoded and one
+category needs to be left out to avoid redundancies). The class will also perform 
+step-wise regression for us and will automatically chooset the features with the
+highest p-value to predict the dependent variable.
 """
