@@ -216,5 +216,3 @@ How to implement code to avoid the dummy variable trap (simply removing one
 categorical variable to avoid redundancy):
 """
 # X = X[:, 1:] 
-
-
